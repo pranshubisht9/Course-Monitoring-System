@@ -50,7 +50,7 @@ public class DBUtil {
 
            con =  DriverManager.getConnection(url,username,password);
 
-            System.out.println(con);
+//            System.out.println(con);
 
         } catch (SQLException e) {
 

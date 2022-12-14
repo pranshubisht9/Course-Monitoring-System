@@ -1,0 +1,91 @@
+MVC -> model view controller
+(mysql)|(frontend end)|(tech-> jdbc)
+
+
+
+
+create database CourseMonitoringSystem;
+
+---------Admin---------------
+
+create table Admin(
+username varchar(55) primary key,
+password varchar(20)
+);
+
+****inserting****
+insert into Admin values ("pranshu@bisht","Parley@Bisht");
+insert into Admin values ("hrithi_bisht","Hritu@Bisht");
+insert into Admin values ("kavita_bora","kavi@bora");
+insert into Admin values ("gaurav_bora","gaurav@bora");
+
+
+
+
+---------Faculty--------------
+
+create table Faculty(
+facultyid int primary key,
+facultyname varchar(25),
+facultyaddress varchar(55),
+mobile long,
+email varchar(55),
+username varchar(55),
+password varchar(22)
+);
+
+
+****inserting****
+insert into Faculty values (1,"Physics","Physics Department",9076502360,"physics@gmail.com","physics@department","abcde");
+insert into Faculty values (2,"Chemistry","Chemistry Department",7896542580,"chemistry@gmail.com","physics@department","abcde");
+insert into Faculty values (3,"Maths","Maths Department",9632587410,"maths@gmail.com","maths@department","abcde");
+insert into Faculty values (4,"cs","CS Department",7522023037,"CSs@gmail.com","cs@department","abcde");
+
+
+
+-------Course---------
+
+create table Course(
+courseid int primary key,
+courseName varchar(22),
+fee long,
+courseDescription varchar(80)
+);
+
+-------Batch--------
+
+create table Batch(seleselesele
+batchId int primary key,
+courseId int,
+FOREIGN KEY(courseId) references Course(courseid),
+facultyId int,
+FOREIGN KEY(facultyId) references Faculty(facultyid),
+numberofStudents long,
+batchstartDate DATE,
+duration int
+);
+
+insert into batch values(1,342,53,45,'2021-12-12',52);
+
+
+-------Course Plan----------
+
+create table CoursePlan(
+planId int primary key,
+batchId int,
+FOREIGN KEY(batchId) references Batch(batchId),
+daynumber int,
+topic varchar(30),
+status varchar(20)
+);
+
+
+alter table course
+change column coursid courseId int;
+
+
+
+
+
+
+

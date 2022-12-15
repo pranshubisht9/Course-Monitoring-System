@@ -1,5 +1,7 @@
 package com.dao;
 
-public interface FacultyDao {
+import com.model.Course;
 
+public interface FacultyDao {
+String CoursePlan(Course course);
 }

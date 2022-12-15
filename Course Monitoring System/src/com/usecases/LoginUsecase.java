@@ -19,7 +19,7 @@ public class LoginUsecase {
         Authentic auth = new AuthenticImpl();
 
         try {
-            String x = auth.loginAdmin(username,password);
+            String x = auth.login(username,password);
             System.out.println(x);
 
 //            if(x){

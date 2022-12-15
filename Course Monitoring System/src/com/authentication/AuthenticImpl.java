@@ -1,4 +1,5 @@
 package com.authentication;
+import com.dao.AdminDaoImpl;
 import com.exceptions.AdminException;
 import com.model.Course;
 import com.utility.DBUtil;
@@ -13,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AuthenticImpl implements Authentic {
     @Override
-    public String loginAdmin(String username, String password) throws AdminException {
+    public String login(String username, String password) throws AdminException {
 
         String msg = "Wrong Credentials";
 

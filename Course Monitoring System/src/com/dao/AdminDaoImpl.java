@@ -115,4 +115,28 @@ public class AdminDaoImpl implements AdminDao{
         }
         return msg;
     }
+
+
+    @Override
+    public String updateCourse(int courseId, String courseName, long fees, String description) throws AdminException {
+
+        String msg = "Not Updated...";
+
+        try (Connection con = DBUtil.provideConnection()){
+            PreparedStatement ps = con.prepareStatement("update course set fee=?,courseName=?, courseDescription=? where courseId=?");
+
+            ps.setLong(1,fees);
+            ps.setString(2,courseName);
+            ps.setString(3,description);
+            ps.setInt(4,courseId);
+
+            ps.executeUpdate();
+            msg = "Updated...";
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return msg;
+    }
 }

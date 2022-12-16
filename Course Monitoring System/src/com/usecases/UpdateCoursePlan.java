@@ -6,7 +6,7 @@ import com.dao.AdminDaoImpl;
 import java.util.Scanner;
 
 public class UpdateCoursePlan {
-    public static void main(String[] args) {
+    public void updateCoursePlan() {
 
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);

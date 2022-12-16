@@ -20,13 +20,10 @@ public class LoginUsecase {
 
         try {
             String x = auth.login(username,password);
-            System.out.println(x);
-
-//            if(x){
-//                System.out.println(true);
-//            }else{
-//                System.out.println(false);
-//            }
+            if(x == null){}
+            else{
+                System.out.println(x);
+            }
 
         } catch (AdminException e) {
             throw new RuntimeException(e);

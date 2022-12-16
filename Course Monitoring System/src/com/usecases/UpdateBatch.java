@@ -7,7 +7,7 @@ import com.exceptions.AdminException;
 import java.util.Scanner;
 
 public class UpdateBatch {
-    public static void main(String[] args) {
+    public void updateBatch() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter Updated Batch Id : "); int batchId = sc.nextInt();
@@ -21,11 +21,6 @@ public class UpdateBatch {
         System.out.print("Enter Batch Start Date : "); String batchstartDate = sc.next();
 
         System.out.print("Enter Duration : "); int duration = sc.nextInt();
-
-
-
-
-
 
         AdminDao dao = new AdminDaoImpl();
         String result = null;

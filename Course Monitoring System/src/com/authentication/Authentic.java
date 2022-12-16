@@ -5,5 +5,4 @@ import com.model.Course;
 
 public interface Authentic {
     String login(String username, String password) throws AdminException;
-    String courseCreate(Course course);
 }

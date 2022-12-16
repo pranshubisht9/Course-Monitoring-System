@@ -10,7 +10,7 @@ public class CreateCourse {
     // Declaring the color
     // Custom declaration
     public static final String TEXT_YELLOW = "\u001B[33m";
-    public static void main(String[] args) {
+    public void createCourse() {
 
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);

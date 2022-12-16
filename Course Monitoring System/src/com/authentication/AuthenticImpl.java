@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 
 public class AuthenticImpl implements Authentic {
+    public static final String TEXT_RED = "\u001B[31m";
+    public static final String TEXT_RESET = "\u001B[0m";
     @Override
     public String login(String username, String password) throws AdminException {
 
@@ -78,12 +80,11 @@ public class AuthenticImpl implements Authentic {
         System.out.println("***************************************************************");
 //        System.out.println();
         System.out.println("___________Admin Login Screen____________");
-        System.out.print("Press-1          "); System.out.println("          Press-2");
-        System.out.print("Press-3          "); System.out.println("          Press-4");
-        System.out.print("Press-5          "); System.out.println("          Press-6");
-        System.out.print("Press-7          "); System.out.println("          Press-8");
-        System.out.print("Press-9          "); System.out.println("          Press-10");
-        System.out.println();
+        System.out.println("Course Section -> "+TEXT_RED+"ENTER-1"+TEXT_RESET);
+        System.out.println("Faculty Section -> "+TEXT_RED+"ENTER-2"+TEXT_RESET);
+        System.out.println("Batch Section -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+        System.out.println("Course Planner Section -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Your Selected Number -> ");
         int val = sc.nextInt();
@@ -102,9 +103,10 @@ public class AuthenticImpl implements Authentic {
         System.out.println("*****************************************************************");
 //        System.out.println();
         System.out.println("____________Faculty Login Screen______________");
-        System.out.print("Press-1          "); System.out.println("          Press-2");
-        System.out.print("Press-3          "); System.out.println("          Press-4");
-        System.out.print("Press-5          "); System.out.println("          Press-6");
+        System.out.println("Create Course Plan -> "+TEXT_RED+"ENTER-1"+TEXT_RESET);
+        System.out.println("Course Plan Update -> "+TEXT_RED+"ENTER-2"+TEXT_RESET);
+        System.out.println("Course Plan View -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+        System.out.println("Reset Password -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter Your Selected Number -> ");

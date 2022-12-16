@@ -22,12 +22,6 @@ public class LoginUsecase {
             String x = auth.login(username,password);
             System.out.println(x);
 
-//            if(x){
-//                System.out.println(true);
-//            }else{
-//                System.out.println(false);
-//            }
-
         } catch (AdminException e) {
             throw new RuntimeException(e);
         }

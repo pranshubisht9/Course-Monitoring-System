@@ -2,7 +2,6 @@ package com.authentication;
 import com.dao.AdminDao;
 import com.dao.AdminDaoImpl;
 import com.exceptions.AdminException;
-import com.model.Course;
 import com.screens.BatchScreen;
 import com.screens.CoursePlanScreen;
 import com.screens.CourseSreen;
@@ -72,11 +71,7 @@ public class AuthenticImpl implements Authentic {
 //                String x = f.getUsername();
 
 
-                updateFacPass(username);
-
-
-
-               FacultyLoginScreen();
+               FacultyLoginScreen(username);
 
             }
         }catch (SQLException e){
@@ -85,7 +80,7 @@ public class AuthenticImpl implements Authentic {
         return msg;
     }
 
-    private static void updateFacPass(String username) {
+/*    private static void updateFacPass(String username) {
         SetFacultyPassword sfp = new SetFacultyPassword();
        String password = sfp.setFacultyPassword();
 
@@ -100,12 +95,8 @@ public class AuthenticImpl implements Authentic {
 
 
 
-    }
+    }*/
 
-    @Override
-    public String courseCreate(Course course) {
-        return null;
-    }
 
     private void AdminLoginScreen() {
         System.out.println("***************************************************************");
@@ -291,7 +282,7 @@ public class AuthenticImpl implements Authentic {
 
 
 
-    private void FacultyLoginScreen() {
+    private void FacultyLoginScreen(String username) {
         System.out.println("*****************************************************************");
 //        System.out.println();
         System.out.println("____________Faculty Login Screen______________");
@@ -321,7 +312,21 @@ public class AuthenticImpl implements Authentic {
             break;
 
         case 4:
-            System.out.println(4);
+
+            SetFacultyPassword sfp = new SetFacultyPassword();
+            String password = sfp.setFacultyPassword();
+
+            try(Connection con = DBUtil.provideConnection()) {
+                PreparedStatement ps = con.prepareStatement("update faculty set password=? where username=?");
+                ps.setString(1,password);
+                ps.setString(2,username);
+
+                ps.executeUpdate();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+
+            System.out.println("Password Change SuccessFully");
             break;
     }
     }

@@ -12,8 +12,8 @@ public class SetFacultyPassword {
         String pwd = null;
         Scanner sc = new Scanner(System.in);
         System.out.println();
-        System.out.print("Enter Updated Password : ");
-
+        System.out.println("Enter Updated Password");
+        System.out.println();
         System.out.print("Enter New Password : ");
         String newPassword = sc.next();
         System.out.println("Confirm Password : ");

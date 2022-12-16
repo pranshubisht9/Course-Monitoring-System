@@ -15,11 +15,12 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 
+
 public class AuthenticImpl implements Authentic {
     public static final String TEXT_RED = "\u001B[31m";
     public static final String TEXT_RESET = "\u001B[0m";
 
-    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+
     @Override
     public String login(String username, String password) throws AdminException {
 
@@ -42,18 +43,11 @@ public class AuthenticImpl implements Authentic {
 
 
             if(ad_rs.next()){
-//               here i have to make a further funtion as per as flow for admin
-
-
-                //for pausing some seconds
                 try {
                     System.out.println("Please Wait...");
-
                     Thread.sleep(3000);
-
-
                     System.out.println("Admin Login Sucessfully");
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                     AdminLoginScreen();
                     return null;
 
@@ -64,15 +58,8 @@ public class AuthenticImpl implements Authentic {
 
             }
             else if(fa_rs.next()){
-//               here i have to make a further funtion as per as flow for faculti
-//                return true;
                 msg = "Faculty Login";
-//                Faculty f = new Faculty();
-//                String x = f.getUsername();
-
-
                FacultyLoginScreen(username);
-
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -80,26 +67,9 @@ public class AuthenticImpl implements Authentic {
         return msg;
     }
 
-/*    private static void updateFacPass(String username) {
-        SetFacultyPassword sfp = new SetFacultyPassword();
-       String password = sfp.setFacultyPassword();
-
-       try(Connection con = DBUtil.provideConnection()) {
-
-//           PreparedStatement ps =
-
-
-       }catch (SQLException e){
-           e.printStackTrace();
-       }
-
-
-
-    }*/
-
 
     private void AdminLoginScreen() {
-        System.out.println("***************************************************************");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 //        System.out.println();
         System.out.println("___________Admin Login Screen____________");
         System.out.println("Course Section -> "+TEXT_RED+"ENTER-1"+TEXT_RESET);
@@ -111,16 +81,25 @@ public class AuthenticImpl implements Authentic {
         System.out.println();
         System.out.print("Enter Your Selected Number -> ");
         int val = sc.nextInt();
-        System.out.println("*****************************************************************");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+
+        try {
+            System.out.println("Please Wait...");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         
         switch (val){
 
-            //to achieve the nested method here i have been using lambda expression
-
+            //to achieve the nested method here so that i have been using lambda expression
 
             case 1: // course Section
 
                 CourseSreen cs = () -> {
+
+                    System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+                    System.out.println("_____________________Course-Screen_____________________________");
 
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
@@ -130,6 +109,14 @@ public class AuthenticImpl implements Authentic {
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
+
+
+                    try {
+                        System.out.println("Please Wait...");
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     switch (c) {
                         case 1: //this is for adding new course
@@ -173,13 +160,21 @@ public class AuthenticImpl implements Authentic {
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
 
+                    try {
+                        System.out.println("Please Wait...");
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
                     switch (c) {
                         case 1: //this is for adding new faculty
 
                             CreateFaculty cf = new CreateFaculty();
                             cf.createFaculty();
-
                             break;
+
                         case 2: // this is for updating faculty
 
                             UpdateFaculty uf = new UpdateFaculty();
@@ -190,18 +185,13 @@ public class AuthenticImpl implements Authentic {
 
                             AdminDao dao = new AdminDaoImpl();
                             dao.viewFaculty();
-
                             break;
                     }
 
                 };
 
                 fs.facultySectionScreen();
-
                 break;
-
-
-
 
 
 
@@ -216,6 +206,13 @@ public class AuthenticImpl implements Authentic {
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
+
+                    try {
+                        System.out.println("Please Wait...");
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     switch (c) {
                         case 1: //this is for adding new batch
@@ -243,8 +240,6 @@ public class AuthenticImpl implements Authentic {
 
 
 
-
-
             case 4: //Course Planner Screen
                 CoursePlanScreen cps = () -> {
 
@@ -256,6 +251,13 @@ public class AuthenticImpl implements Authentic {
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
+
+                    try {
+                        System.out.println("Please Wait...");
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     switch (c) {
                         case 1: //this is for adding new coursePlanner
@@ -283,7 +285,7 @@ public class AuthenticImpl implements Authentic {
 
 
     private void FacultyLoginScreen(String username) {
-        System.out.println("*****************************************************************");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 //        System.out.println();
         System.out.println("____________Faculty Login Screen______________");
         System.out.println("Create Course Plan -> "+TEXT_RED+"ENTER-1"+TEXT_RESET);
@@ -294,7 +296,7 @@ public class AuthenticImpl implements Authentic {
         System.out.println();
         System.out.print("Enter Your Selected Number -> ");
         int val = sc.nextInt();
-        System.out.println("*****************************************************************");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         switch (val){
         case 1: // this is for create coursePlanner
             CreateCoursePlan ccp = new CreateCoursePlan();
@@ -326,12 +328,10 @@ public class AuthenticImpl implements Authentic {
                 e.printStackTrace();
             }
 
-            System.out.println("Password Change SuccessFully");
+            System.out.println("Password Change Successfully!");
             break;
     }
     }
-
-
 }
 
 

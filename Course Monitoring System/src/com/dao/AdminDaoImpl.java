@@ -139,4 +139,81 @@ public class AdminDaoImpl implements AdminDao{
 
         return msg;
     }
+
+    @Override
+    public String updateFaculty(int facultyId, String facultyName, String facultyAddress, long mobile, String email, String username, String password) {
+
+        String msg = "Not Updated...";
+
+        try (Connection con = DBUtil.provideConnection()){
+            PreparedStatement ps = con.prepareStatement("update faculty set facultyName=?,facultyAddress=?,mobile=?,email=?,password=? where facultyId=?");
+
+            ps.setString(1,facultyName);
+            ps.setString(2,facultyAddress);
+            ps.setLong(3,mobile);
+            ps.setString(4,email);
+            ps.setString(5,password);
+            ps.setInt(6,facultyId);
+
+            ps.executeUpdate();
+            msg = "Updated...";
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return msg;
+    }
+
+    @Override
+    public String updateBatch(int batchId, int CourseId, int facultyId, long numberofStudents, String batchstartDate, int duration) throws AdminException {
+                String msg = "Not Updated...";
+
+        try (Connection con = DBUtil.provideConnection()){
+            PreparedStatement ps = con.prepareStatement("update batch set courseId=?,facultyId=?,numberofStudents=?,batchstartDate=?,duration=? where batchId=?");
+
+            ps.setInt(1,CourseId);
+            ps.setInt(2,facultyId);
+            ps.setLong(3,numberofStudents);
+            ps.setString(4,batchstartDate);
+            ps.setInt(5,duration);
+            ps.setInt(6,batchId);
+
+            ps.executeUpdate();
+            msg = "Updated...";
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return msg;
+    }
+
+    @Override
+    public String updateCoursePlan(int planId, int batchId, int dayNumber, String topic, String status) {
+        String msg = "Not Updated...";
+
+        try (Connection con = DBUtil.provideConnection()){
+            PreparedStatement ps = con.prepareStatement("update coursePlan set batchId=?,daynumber=?,topic=?,status = ? where planId=?");
+
+            ps.setInt(1,batchId);
+            ps.setInt(2,dayNumber);
+            ps.setString(3,topic);
+            ps.setString(4,status);
+            ps.setInt(5,planId);
+
+
+            ps.executeUpdate();
+            msg = "Updated...";
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return msg;
+    }
+
+
+
 }
+

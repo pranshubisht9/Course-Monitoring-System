@@ -7,7 +7,7 @@ import com.exceptions.AdminException;
 import java.util.Scanner;
 
 public class UpdateFaculty {
-    public static void main(String[] args) {
+    public void updateFaculty() {
         Scanner sc1 = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
 

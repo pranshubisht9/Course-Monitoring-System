@@ -7,7 +7,7 @@ import com.exceptions.AdminException;
 import java.util.Scanner;
 
 public class UpdateCourse {
-    public static void main(String[] args) {
+    public void updateCourse() {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Scanner sc3 = new Scanner(System.in);

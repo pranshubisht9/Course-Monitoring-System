@@ -7,11 +7,17 @@ import com.model.CoursePlan;
 import com.model.Faculty;
 import com.utility.DBUtil;
 
+import javax.swing.event.ListDataEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminDaoImpl implements AdminDao{
+
+    // Take input and Insert data to database
     @Override
     public String createCourse(Course course) {
         String msg = "Not inserted...";
@@ -116,6 +122,7 @@ public class AdminDaoImpl implements AdminDao{
         return msg;
     }
 
+    // Take input and update data to database
 
     @Override
     public String updateCourse(int courseId, String courseName, long fees, String description) throws AdminException {
@@ -213,6 +220,119 @@ public class AdminDaoImpl implements AdminDao{
         return msg;
     }
 
+
+    // view
+
+    @Override
+    public void viewCourse() {
+    try(Connection con = DBUtil.provideConnection()){
+
+        PreparedStatement ps = con.prepareStatement("select * from course");
+        ResultSet set = ps.executeQuery();
+
+            System.out.println("###############################################################################");
+        while (set.next()){
+            int courseId = set.getInt(1);
+            String courseName = set.getString(2);
+            long fee = set.getLong(3);
+            String courseDescription = set.getString(4);
+            System.out.println("| Course Id -> "+courseId+" | Course Name -> "+courseName+" | Fee -> "+fee+" | Course Descripition -> "+courseDescription+" |");
+        }
+        System.out.println("###############################################################################");
+
+//        ps.setString(1,);
+
+
+    }catch (SQLException e){
+        e.printStackTrace();
+    }
+    }
+
+    @Override
+    public void viewFaculty() {
+        try(Connection con = DBUtil.provideConnection()){
+
+            PreparedStatement ps = con.prepareStatement("select * from faculty");
+            ResultSet set = ps.executeQuery();
+
+            System.out.println("###############################################################################");
+            while (set.next()){
+                int facultyid = set.getInt(1);
+                String facultyname = set.getString(2);
+                String facultyaddress = set.getString(3);
+
+                long mobile = set.getLong(4);
+                String email = set.getString(5);
+                String username = set.getString(6);
+                String password = set.getString(7);
+
+                System.out.println("| Faculty ID -> "+facultyid+" | Faculty Name -> "+facultyname+" | Faculty Address -> "+facultyaddress+" | Mobile Number -> "+mobile+" | Email -> "+email+"| Username -> "+username+"| Password -> "+password+" |");
+            }
+            System.out.println("###############################################################################");
+
+//        ps.setString(1,);
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void viewBatch() {
+        try(Connection con = DBUtil.provideConnection()){
+
+            PreparedStatement ps = con.prepareStatement("select * from batch");
+            ResultSet set = ps.executeQuery();
+
+            System.out.println("###############################################################################");
+            while (set.next()){
+                int batchId = set.getInt(1);
+                int courseId = set.getInt(2);
+                int facultyId = set.getInt(3);
+
+                long numberofStudents = set.getLong(4);
+                String batchstartDate = set.getString(5);
+                String duration = set.getString(6);
+
+                System.out.println("| Batch ID -> "+batchId+" | Course Id -> "+courseId+" | Faculty Id -> "+facultyId+" | Number of Students -> "+numberofStudents+" | Batch Start Date -> "+batchstartDate+"| Duration -> "+duration+" |");
+            }
+            System.out.println("###############################################################################");
+
+//        ps.setString(1,);
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void viewCoursePlan() {
+        try(Connection con = DBUtil.provideConnection()){
+
+            PreparedStatement ps = con.prepareStatement("select * from batch");
+            ResultSet set = ps.executeQuery();
+
+            System.out.println("###############################################################################");
+            while (set.next()){
+                int planId = set.getInt(1);
+                int batchId = set.getInt(2);
+                int daynumber = set.getInt(3);
+                String topic = set.getString(4);
+                String status = set.getString(5);
+
+                System.out.println("| Batch ID -> "+planId+" | Course Id -> "+batchId+" | Faculty Id -> "+daynumber+" | Number of Students -> "+topic+" | Batch Start Date -> "+status+" |");
+            }
+            System.out.println("###############################################################################");
+
+//        ps.setString(1,);
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 
 
 }

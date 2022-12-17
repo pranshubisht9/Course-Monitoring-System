@@ -29,4 +29,27 @@ public class LoginUsecase {
             throw new RuntimeException(e);
         }
     }
+
+    public void loginBack() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%________Login_________%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println();
+        System.out.print("Enter Username : "); String username = sc.next();
+        System.out.print("Enter Password : "); String password = sc.next();
+        System.out.println();
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+
+        Authentic auth = new AuthenticImpl();
+
+        try {
+            String x = auth.login(username,password);
+            if(x == null){}
+            else{
+                System.out.println(x);
+            }
+
+        } catch (AdminException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

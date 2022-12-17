@@ -2,10 +2,7 @@ package com.authentication;
 import com.dao.AdminDao;
 import com.dao.AdminDaoImpl;
 import com.exceptions.AdminException;
-import com.screens.BatchScreen;
-import com.screens.CoursePlanScreen;
-import com.screens.CourseSreen;
-import com.screens.FacultyScreen;
+import com.screens.*;
 import com.usecases.*;
 import com.utility.DBUtil;
 import java.sql.Connection;
@@ -76,6 +73,7 @@ public class AuthenticImpl implements Authentic {
         System.out.println("Faculty Section -> "+TEXT_RED+"ENTER-2"+TEXT_RESET);
         System.out.println("Batch Section -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
         System.out.println("Course Planner Section -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
+        System.out.println("Back Page -> "+TEXT_RED+"ENTER-0"+TEXT_RESET);
 
         Scanner sc = new Scanner(System.in);
         System.out.println();
@@ -93,6 +91,12 @@ public class AuthenticImpl implements Authentic {
         switch (val){
 
             //to achieve the nested method here so that i have been using lambda expression
+            case 0: // backpage
+                BackScreen backScreen = () -> {
+                    LoginUsecase luc = new LoginUsecase();
+                    luc.loginBack();
+            };
+            backScreen.backPage();
 
             case 1: // course Section
 
@@ -104,6 +108,7 @@ public class AuthenticImpl implements Authentic {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+                    System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
 
 
                     System.out.println();
@@ -119,6 +124,11 @@ public class AuthenticImpl implements Authentic {
                     }
 
                     switch (c) {
+                        case 0: //back page
+                            BackScreen selectOperation1 = this::AdminLoginScreen; //method refernce
+                            selectOperation1.backPage();
+
+
                         case 1: //this is for adding new course
                             CreateCourse cc = new CreateCourse();
                             cc.createCourse();
@@ -154,6 +164,8 @@ public class AuthenticImpl implements Authentic {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+                    System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
+
 
 
                     System.out.println();
@@ -169,6 +181,10 @@ public class AuthenticImpl implements Authentic {
 
 
                     switch (c) {
+                        case 0: //back page
+                            BackScreen selectOperation2 = this::AdminLoginScreen;
+                            selectOperation2.backPage();
+
                         case 1: //this is for adding new faculty
 
                             CreateFaculty cf = new CreateFaculty();
@@ -201,6 +217,7 @@ public class AuthenticImpl implements Authentic {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+                    System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
 
 
                     System.out.println();
@@ -215,6 +232,11 @@ public class AuthenticImpl implements Authentic {
                     }
 
                     switch (c) {
+
+                            case 0: //back page
+                                BackScreen selectOperation3 = this::AdminLoginScreen;
+                                selectOperation3.backPage();
+
                         case 1: //this is for adding new batch
 
                             CreateBatch cb = new CreateBatch();
@@ -260,6 +282,11 @@ public class AuthenticImpl implements Authentic {
                     }
 
                     switch (c) {
+
+                        case 0: //back page
+                            BackScreen selectOperation4 = this::AdminLoginScreen;
+                            selectOperation4.backPage();
+
                         case 1: //this is for adding new coursePlanner
                             CreateCoursePlan ccp = new CreateCoursePlan();
                             ccp.createCoursePlan();
@@ -292,12 +319,21 @@ public class AuthenticImpl implements Authentic {
         System.out.println("Course Plan Update -> "+TEXT_RED+"ENTER-2"+TEXT_RESET);
         System.out.println("Course Plan View -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
         System.out.println("Reset Password -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
+        System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
+
+
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter Your Selected Number -> ");
         int val = sc.nextInt();
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         switch (val){
+        case 0: //back page
+            BackScreen backScreen = () -> {
+                LoginUsecase luc = new LoginUsecase();
+                luc.loginBack();
+            };
+
         case 1: // this is for create coursePlanner
             CreateCoursePlan ccp = new CreateCoursePlan();
             ccp.createCoursePlan();

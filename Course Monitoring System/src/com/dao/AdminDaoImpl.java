@@ -311,7 +311,7 @@ public class AdminDaoImpl implements AdminDao{
     public void viewCoursePlan() {
         try(Connection con = DBUtil.provideConnection()){
 
-            PreparedStatement ps = con.prepareStatement("select * from batch");
+            PreparedStatement ps = con.prepareStatement("select * from coursePlan");
             ResultSet set = ps.executeQuery();
 
             System.out.println("###############################################################################");

@@ -16,6 +16,9 @@ import java.util.Scanner;
 public class AuthenticImpl implements Authentic {
     public static final String TEXT_RED = "\u001B[31m";
     public static final String TEXT_RESET = "\u001B[0m";
+    public static final String TEXT_PURPLE = "\u001B[35m";
+    public static final String BLACK_BACKGROUND = "\033[40m";  // BLACK
+    public static final String WHITE_BOLD_BRIGHT = "\033[1;97m"; // WHITE
 
 
     @Override
@@ -41,9 +44,12 @@ public class AuthenticImpl implements Authentic {
 
             if(ad_rs.next()){
                 try {
+                    System.out.println();
                     System.out.println("Please Wait...");
+                    System.out.println();
                     Thread.sleep(3000);
-                    System.out.println("Admin Login Sucessfully");
+                    System.out.println("Admin Login Successfully!");
+                    System.out.println();
                     Thread.sleep(1000);
                     AdminLoginScreen();
                     return null;
@@ -55,7 +61,7 @@ public class AuthenticImpl implements Authentic {
 
             }
             else if(fa_rs.next()){
-                msg = "Faculty Login";
+                msg = "Faculty Login Successfully!";
                FacultyLoginScreen(username);
             }
         }catch (SQLException e){
@@ -66,23 +72,25 @@ public class AuthenticImpl implements Authentic {
 
 
     private void AdminLoginScreen() {
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-//        System.out.println();
-        System.out.println("___________Admin Login Screen____________");
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Admin Login Screen_______________________________"+TEXT_RESET);
+        System.out.println();
         System.out.println("Course Section -> "+TEXT_RED+"ENTER-1"+TEXT_RESET);
         System.out.println("Faculty Section -> "+TEXT_RED+"ENTER-2"+TEXT_RESET);
         System.out.println("Batch Section -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
         System.out.println("Course Planner Section -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
-        System.out.println("Back Page -> "+TEXT_RED+"ENTER-0"+TEXT_RESET);
+        System.out.println("Back Page -> "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
 
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter Your Selected Number -> ");
         int val = sc.nextInt();
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+//        System.out.println(BLACK_BACKGROUND+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+TEXT_RESET);
+
 
         try {
+            System.out.println();
             System.out.println("Please Wait...");
+            System.out.println();
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -92,32 +100,33 @@ public class AuthenticImpl implements Authentic {
 
             //to achieve the nested method here so that i have been using lambda expression
             case 0: // backpage
+//                System.exit(0);
+
                 BackScreen backScreen = () -> {
                     LoginUsecase luc = new LoginUsecase();
                     luc.loginBack();
             };
             backScreen.backPage();
-
             case 1: // course Section
+                System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Course Screen________________________________"+TEXT_RESET);
+                System.out.println();
 
                 CourseSreen cs = () -> {
-
-                    System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-                    System.out.println("_____________________Course-Screen_____________________________");
-
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-                    System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
 
 
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
 
-
+//                    System.out.println(BLACK_BACKGROUND+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+TEXT_RESET);
                     try {
+                        System.out.println();
                         System.out.println("Please Wait...");
+                        System.out.println();
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -141,8 +150,9 @@ public class AuthenticImpl implements Authentic {
 
                             break;
                         case 3: // this is for view course
-
-                        AdminDao ad = new AdminDaoImpl();
+                            System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________View Course________________________________"+TEXT_RESET);
+                            System.out.println();
+                            AdminDao ad = new AdminDaoImpl();
                         ad.viewCourse();
                             break;
                     }
@@ -159,21 +169,23 @@ public class AuthenticImpl implements Authentic {
 
 
             case 2: // Faculty Screen
-
+                System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Faculty Screen________________________________"+TEXT_RESET);
+                System.out.println();
                 FacultyScreen fs = () -> {
+
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-                    System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
-
-
+                    System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
 
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
-
+//                    System.out.println(BLACK_BACKGROUND+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+TEXT_RESET);
                     try {
+                        System.out.println();
                         System.out.println("Please Wait...");
+                        System.out.println();
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -198,6 +210,8 @@ public class AuthenticImpl implements Authentic {
                             break;
 
                         case 3: // this is for view faculty
+                            System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________View Faculty________________________________"+TEXT_RESET);
+                            System.out.println();
 
                             AdminDao dao = new AdminDaoImpl();
                             dao.viewFaculty();
@@ -213,19 +227,24 @@ public class AuthenticImpl implements Authentic {
 
             case 3: //Batch Screen
 
+                System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Batch Screen________________________________"+TEXT_RESET);
+                System.out.println();
+
                 BatchScreen bs = () -> {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-                    System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
 
 
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
-
+//                    System.out.println(BLACK_BACKGROUND+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+TEXT_RESET);
                     try {
+                        System.out.println();
                         System.out.println("Please Wait...");
+                        System.out.println();
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -263,19 +282,25 @@ public class AuthenticImpl implements Authentic {
 
 
             case 4: //Course Planner Screen
+                System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Course Planner Screen________________________________"+TEXT_RESET);
+                System.out.println();
                 CoursePlanScreen cps = () -> {
 
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-
+                    System.out.println("View Course : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
 
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
                     int c = sc.nextInt();
 
+
+//                    System.out.println(BLACK_BACKGROUND+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+TEXT_RESET);
                     try {
+                        System.out.println();
                         System.out.println("Please Wait...");
+                        System.out.println();
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -298,6 +323,8 @@ public class AuthenticImpl implements Authentic {
                             break;
 
                         case 3: // this is for view coursePlanner
+                            System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________View Course Plan________________________________"+TEXT_RESET);
+                            System.out.println();
                             AdminDao dao = new AdminDaoImpl();
                             dao.viewCoursePlan();
                             break;
@@ -312,21 +339,21 @@ public class AuthenticImpl implements Authentic {
 
 
     private void FacultyLoginScreen(String username) {
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-//        System.out.println();
-        System.out.println("____________Faculty Login Screen______________");
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Faculty Login Screen_______________________________"+TEXT_RESET);
+        System.out.println();
         System.out.println("Create Course Plan -> "+TEXT_RED+"ENTER-1"+TEXT_RESET);
         System.out.println("Course Plan Update -> "+TEXT_RED+"ENTER-2"+TEXT_RESET);
         System.out.println("Course Plan View -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
         System.out.println("Reset Password -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
-        System.out.println("Back Page"+TEXT_RED+"ENTER-0"+TEXT_RESET);
+        System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
 
 
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter Your Selected Number -> ");
         int val = sc.nextInt();
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+//        System.out.println(BLACK_BACKGROUND+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+TEXT_RESET);
+        System.out.println();
         switch (val){
         case 0: //back page
             BackScreen backScreen = () -> {
@@ -345,12 +372,15 @@ public class AuthenticImpl implements Authentic {
             break;
 
         case 3: // this is for course plan view
+            System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________View Course Plan________________________________"+TEXT_RESET);
+            System.out.println();
             AdminDao dao = new AdminDaoImpl();
             dao.viewCoursePlan();
             break;
 
         case 4:
-
+            System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Reset Password Screen________________________________"+TEXT_RESET);
+            System.out.println();
             SetFacultyPassword sfp = new SetFacultyPassword();
             String password = sfp.setFacultyPassword();
 

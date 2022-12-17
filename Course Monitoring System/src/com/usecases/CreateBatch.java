@@ -6,6 +6,9 @@ import com.model.Batch;
 
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+
 public class CreateBatch {
         public static final String TEXT_RESET = "\u001B[0m";
         // Declaring the color
@@ -16,9 +19,7 @@ public class CreateBatch {
             Scanner sc = new Scanner(System.in);
 
             // this is for colour console
-            System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-            System.out.println(TEXT_YELLOW +"----------------------------Insert Batch------------------------------"+TEXT_RESET);
-            System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+            System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Create Batch________________________________"+TEXT_RESET);
             System.out.println();
 //            System.out.print("Enter Batch ID : "); int batchId = sc.nextInt();
             System.out.print("Enter Course ID : "); int courseId = sc.nextInt();

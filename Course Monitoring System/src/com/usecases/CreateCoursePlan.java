@@ -6,6 +6,9 @@ import com.model.CoursePlan;
 
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+
 public class CreateCoursePlan {
 
     public static final String TEXT_RESET = "\u001B[0m";
@@ -20,9 +23,7 @@ public class CreateCoursePlan {
         Scanner sc2 = new Scanner(System.in);
 
     // this is for colour console
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        System.out.println(TEXT_YELLOW +"----------------------------Insert Course Plan------------------------------"+TEXT_RESET);
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Create Course Plan________________________________"+TEXT_RESET);
         System.out.println();
 //        System.out.print("Enter Plan ID : "); int planId = sc.nextInt();
         System.out.print("Enter Batch ID : "); int batchId = sc.nextInt();

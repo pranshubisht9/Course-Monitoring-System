@@ -6,8 +6,14 @@ import com.exceptions.AdminException;
 
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+import static com.usecases.CreateBatch.TEXT_RESET;
+
 public class UpdateCourse {
     public void updateCourse() {
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Update Course________________________________"+TEXT_RESET);
+        System.out.println();
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Scanner sc3 = new Scanner(System.in);

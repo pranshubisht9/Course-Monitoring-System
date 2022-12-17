@@ -6,10 +6,16 @@ import com.exceptions.AdminException;
 
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+import static com.usecases.CreateBatch.TEXT_RESET;
+
 public class UpdateFaculty {
     public void updateFaculty() {
         Scanner sc1 = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Update Faculty________________________________"+TEXT_RESET);
+
 
         System.out.print("Enter Your Faculty Id : "); int facultyId = sc1.nextInt();
 

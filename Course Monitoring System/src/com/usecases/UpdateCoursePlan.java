@@ -5,11 +5,17 @@ import com.dao.AdminDaoImpl;
 
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+import static com.usecases.CreateBatch.TEXT_RESET;
+
 public class UpdateCoursePlan {
     public void updateCoursePlan() {
 
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Update Course Plan________________________________"+TEXT_RESET);
+        System.out.println();
 
         System.out.print("Enter Plan Id : "); int planId = sc.nextInt();
         System.out.println();

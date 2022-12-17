@@ -5,6 +5,9 @@ import com.dao.AdminDaoImpl;
 import com.model.Course;
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+
 public class CreateCourse {
     public static final String TEXT_RESET = "\u001B[0m";
     // Declaring the color
@@ -17,9 +20,8 @@ public class CreateCourse {
 
 
         // this is for colour console
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        System.out.println(TEXT_YELLOW +"----------------------------Insert Course------------------------------"+TEXT_RESET);
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Create Course________________________________"+TEXT_RESET);
+
         System.out.println();
 //        System.out.print("Enter Course ID : "); int courseId = sc.nextInt();
         System.out.print("Enter Course Name : "); String courseName = sc.next();

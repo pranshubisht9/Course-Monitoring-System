@@ -6,10 +6,15 @@ import com.exceptions.AdminException;
 
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+import static com.usecases.CreateBatch.TEXT_RESET;
+
 public class UpdateBatch {
     public void updateBatch() {
         Scanner sc = new Scanner(System.in);
-
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Update Batch________________________________"+TEXT_RESET);
+        System.out.println();
         System.out.println("Enter Updated Batch Id : "); int batchId = sc.nextInt();
         System.out.println();
         System.out.println("Enter Updated Values Below");

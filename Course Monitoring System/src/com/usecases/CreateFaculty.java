@@ -7,6 +7,9 @@ import com.model.Faculty;
 import java.io.InputStream;
 import java.util.Scanner;
 
+import static com.authentication.AuthenticImpl.BLACK_BACKGROUND;
+import static com.authentication.AuthenticImpl.WHITE_BOLD_BRIGHT;
+
 public class CreateFaculty {
     public static final String TEXT_RESET = "\u001B[0m";
     // Declaring the color
@@ -25,9 +28,8 @@ public class CreateFaculty {
 
 
         // this is for colour console
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        System.out.println(TEXT_YELLOW +"----------------------------Insert Faculty------------------------------"+TEXT_RESET);
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Create Faculty________________________________"+TEXT_RESET);
+
         System.out.println();
 //        System.out.print("Enter Faculty ID : "); int facultyId = sc.nextInt();
         System.out.print("Enter Faculty Name : "); String facultyName = sc1.next();

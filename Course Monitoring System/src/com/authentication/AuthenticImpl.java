@@ -79,6 +79,7 @@ public class AuthenticImpl implements Authentic {
         System.out.println("Batch Section -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
         System.out.println("Course Planner Section -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
         System.out.println("Back Page -> "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+        System.out.println("Exit Page -> "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
 
         Scanner sc = new Scanner(System.in);
         System.out.println();
@@ -115,7 +116,9 @@ public class AuthenticImpl implements Authentic {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-                    System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Back Page : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Exit Page : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
+
 
 
                     System.out.println();
@@ -155,6 +158,10 @@ public class AuthenticImpl implements Authentic {
                             AdminDao ad = new AdminDaoImpl();
                         ad.viewCourse();
                             break;
+
+                        case 9://exit
+                            System.exit(0);
+                            break;
                     }
 
                 };
@@ -176,7 +183,8 @@ public class AuthenticImpl implements Authentic {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-                    System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Back Page : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Exit Page : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
 
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
@@ -212,9 +220,12 @@ public class AuthenticImpl implements Authentic {
                         case 3: // this is for view faculty
                             System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________View Faculty________________________________"+TEXT_RESET);
                             System.out.println();
-
                             AdminDao dao = new AdminDaoImpl();
                             dao.viewFaculty();
+                            break;
+
+                        case 9:
+                            System.exit(0);
                             break;
                     }
 
@@ -234,7 +245,8 @@ public class AuthenticImpl implements Authentic {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-                    System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Back Page : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Exit Page : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
 
 
                     System.out.println();
@@ -269,8 +281,13 @@ public class AuthenticImpl implements Authentic {
                             break;
 
                         case 3: // this is for view batch
+                            System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________View Course Plan________________________________"+TEXT_RESET);
                             AdminDao ad = new AdminDaoImpl();
                             ad.viewBatch();
+                            break;
+
+                        case 9:
+                            System.exit(0);
                             break;
                     }
 
@@ -289,7 +306,10 @@ public class AuthenticImpl implements Authentic {
                     System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
                     System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
                     System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
-                    System.out.println("View Course : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Back Screen : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+                    System.out.println("Exit Page : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
+
+
 
                     System.out.println();
                     System.out.print("Enter Your Selected Number -> ");
@@ -328,9 +348,17 @@ public class AuthenticImpl implements Authentic {
                             AdminDao dao = new AdminDaoImpl();
                             dao.viewCoursePlan();
                             break;
+
+                        case 9: //exit
+                            System.exit(0);
+                            break;
                     }
                 };
                 cps.coursePlanSection();
+                break;
+
+            case 9: //exit
+                System.exit(0);
                 break;
         }
 
@@ -345,7 +373,10 @@ public class AuthenticImpl implements Authentic {
         System.out.println("Course Plan Update -> "+TEXT_RED+"ENTER-2"+TEXT_RESET);
         System.out.println("Course Plan View -> "+TEXT_RED+"ENTER-3"+TEXT_RESET);
         System.out.println("Reset Password -> "+TEXT_RED+"ENTER-4"+TEXT_RESET);
-        System.out.println("Back Page"+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+        System.out.println("Back Screen : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
+        System.out.println("Exit Screen : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
+
+
 
 
         Scanner sc = new Scanner(System.in);
@@ -396,6 +427,10 @@ public class AuthenticImpl implements Authentic {
 
             System.out.println("Password Change Successfully!");
             break;
+
+            case 9:
+                System.exit(0);
+                break;
     }
     }
 }

@@ -399,6 +399,17 @@ public class AuthenticImpl implements Authentic {
         int val = sc.nextInt();
 //        System.out.println(BLACK_BACKGROUND+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+TEXT_RESET);
         System.out.println();
+
+        try {
+            System.out.println();
+            System.out.println("Please Wait...");
+            System.out.println();
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
         switch (val){
         case 0: //back page
             BackScreen backScreen = () -> {

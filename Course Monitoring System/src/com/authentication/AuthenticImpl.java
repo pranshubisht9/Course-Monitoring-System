@@ -405,6 +405,7 @@ public class AuthenticImpl implements Authentic {
                 LoginUsecase luc = new LoginUsecase();
                 luc.loginBack();
             };
+            backScreen.backPage();
 
         case 1: // this is for create coursePlanner
             CreateCoursePlan ccp = new CreateCoursePlan();

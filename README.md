@@ -1,11 +1,9 @@
 # nifty-competition-2668
 SB-101 Project
 
-# Course Monitoring System
+Project: Course Monitoring System
 
-Project: Make a clone of https://www.ketto.org/ site
-
-In this solo project i have tried to solve problem statement with my efforts and the technology stack, that we have learned till now in Unit-5 in Masai School, Problem statement is below:-
+In this solo project i have tried to solve problem statement with my efforts and the technology stack, that i have learned till now in Unit-5 in Masai School, Problem statement is below:-
 
 In an educational  Institute there are several courses running parallel  every day. For every course there are several batches at same/different time. Every course has a session wise/day wise schedule. It will be difficult for the Faculty Head to know the status of every batch i.e what is the session taught at each day in a batch.
 
@@ -35,8 +33,6 @@ So the Automated Course Monitoring System will keep the records of all the cours
 -	Fill up the day wise planner.
 -	Update his/her password.
 
-
-
 ## Run Locally
 
 Clone the project
@@ -53,17 +49,11 @@ In this project we have used the following technologies:
 - MySql
 - JDBC
 
-Along with that, in order to fetch data we used API our own make hardcode API
-
-
-
-
-
+## Entity Relationship (ER) Diagram Model
 
 ![ER](https://user-images.githubusercontent.com/106018070/208293013-c5dca96c-5d37-4ad0-8678-f04f6daec849.png)
 
-##UML
-
+##UML Diagram (Screen Wise)
 
 ![UML drawio](https://user-images.githubusercontent.com/106018070/208293064-1fe8b4cc-f53e-4765-9fcd-6b41307e4457.png)
 

@@ -5,7 +5,7 @@ SB-101 Project
 
 Project: Make a clone of https://www.ketto.org/ site
 
-In this colaboratory project we have tried to make a look alike clone of Ketto.org Website. With our efforts and the technology stack, that we have learned till now in Unit-2 in Masai School, we were able to clone the front end with similar looks and features.
+In this solo project i have tried to solve problem statement with my efforts and the technology stack, that we have learned till now in Unit-5 in Masai School, Problem statement is below:-
 
 In an educational  Institute there are several courses running parallel  every day. For every course there are several batches at same/different time. Every course has a session wise/day wise schedule. It will be difficult for the Faculty Head to know the status of every batch i.e what is the session taught at each day in a batch.
 

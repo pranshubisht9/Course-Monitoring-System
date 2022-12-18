@@ -51,7 +51,8 @@ In this project we have used the following technologies:
 
 ## Entity Relationship (ER) Diagram Model
 
-![ER](https://user-images.githubusercontent.com/106018070/208293013-c5dca96c-5d37-4ad0-8678-f04f6daec849.png)
+![ER diagram](https://user-images.githubusercontent.com/106018070/208295064-31be3b3b-d1f7-4446-b963-72fe9e2bfd29.png)
+
 
 ## UML Diagram (Screen Wise)
   

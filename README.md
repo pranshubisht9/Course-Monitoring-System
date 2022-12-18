@@ -57,3 +57,15 @@ In this project we have used the following technologies:
   
 ![UML drawio (1)](https://user-images.githubusercontent.com/106018070/208293867-bce64fb7-79a8-45d7-b693-dc05ca38fa00.png)
 
+# Sample View
+
+## Admin Side
+
+
+![admin](https://user-images.githubusercontent.com/106018070/208294177-65816810-0da3-4206-a01d-ea8b7bb8aa0e.png)
+
+
+## Faculty Side
+
+
+![faculty](https://user-images.githubusercontent.com/106018070/208294186-63939a80-ad9b-450c-8946-0bfa49a958e0.png)

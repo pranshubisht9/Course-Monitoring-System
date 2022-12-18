@@ -194,9 +194,9 @@ public class AuthenticImpl implements Authentic {
                 System.out.println();
                 FacultyScreen fs = () -> {
 
-                    System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
-                    System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
-                    System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+                    System.out.println("Add New Faculty : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
+                    System.out.println("Update Faculty : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
+                    System.out.println("View Faculty : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
                     System.out.println("Back Page : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
                     System.out.println("Exit Page : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
 
@@ -256,9 +256,9 @@ public class AuthenticImpl implements Authentic {
                 System.out.println();
 
                 BatchScreen bs = () -> {
-                    System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
-                    System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
-                    System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+                    System.out.println("Add New Batch : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
+                    System.out.println("Update Batch : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
+                    System.out.println("View Batch : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
                     System.out.println("Back Page : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
                     System.out.println("Exit Page : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
 
@@ -317,9 +317,9 @@ public class AuthenticImpl implements Authentic {
                 System.out.println();
                 CoursePlanScreen cps = () -> {
 
-                    System.out.println("Add New Course : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
-                    System.out.println("Update Course : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
-                    System.out.println("View Course : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
+                    System.out.println("Add New Course Plan : "+TEXT_RED+"ENTER-1"+TEXT_RESET);
+                    System.out.println("Update Course Plan : "+TEXT_RED+"ENTER-2"+TEXT_RESET);
+                    System.out.println("View Course Plan : "+TEXT_RED+"ENTER-3"+TEXT_RESET);
                     System.out.println("Back Screen : "+TEXT_PURPLE+"ENTER-0"+TEXT_RESET);
                     System.out.println("Exit Page : "+TEXT_PURPLE+"ENTER-9"+TEXT_RESET);
 

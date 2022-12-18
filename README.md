@@ -53,7 +53,7 @@ In this project we have used the following technologies:
 
 ![ER](https://user-images.githubusercontent.com/106018070/208293013-c5dca96c-5d37-4ad0-8678-f04f6daec849.png)
 
-##UML Diagram (Screen Wise)
+## UML Diagram (Screen Wise)
 
 ![UML drawio](https://user-images.githubusercontent.com/106018070/208293064-1fe8b4cc-f53e-4765-9fcd-6b41307e4457.png)
 

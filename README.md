@@ -43,7 +43,7 @@ Clone the project
 
 ## Technologies we used
 
-In this project we have used the following technologies:
+In this project i have used the following technologies:
 
 - JAVA
 - MySql

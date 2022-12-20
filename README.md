@@ -38,12 +38,12 @@ So the Automated Course Monitoring System will keep the records of all the cours
 Clone the project
 
 ```bash
-  git clone https://github.com/pranshubisht9/ketto.org.git
+  git clone https://github.com/pranshubisht9/nifty-competition-2668.git
 ```
 
 ## Technologies we used
 
-In this project we have used the following technologies:
+In this project i have used the following technologies:
 
 - JAVA
 - MySql

@@ -122,6 +122,7 @@ public class AuthenticImpl implements Authentic {
                     luc.loginBack();
             };
             backScreen.backPage();
+                break;
             case 1: // course Section
                 System.out.println(BLACK_BACKGROUND+WHITE_BOLD_BRIGHT+"_________________________Course Screen________________________________"+TEXT_RESET);
                 System.out.println();
@@ -153,7 +154,7 @@ public class AuthenticImpl implements Authentic {
                         case 0: //back page
                             BackScreen selectOperation1 = this::AdminLoginScreen; //method refernce
                             selectOperation1.backPage();
-
+                            break;
 
                         case 1: //this is for adding new course
                             CreateCourse cc = new CreateCourse();
@@ -218,6 +219,7 @@ public class AuthenticImpl implements Authentic {
                         case 0: //back page
                             BackScreen selectOperation2 = this::AdminLoginScreen;
                             selectOperation2.backPage();
+                            break;
 
                         case 1: //this is for adding new faculty
 
@@ -281,6 +283,7 @@ public class AuthenticImpl implements Authentic {
                             case 0: //back page
                                 BackScreen selectOperation3 = this::AdminLoginScreen;
                                 selectOperation3.backPage();
+                                break;
 
                         case 1: //this is for adding new batch
 
@@ -345,6 +348,7 @@ public class AuthenticImpl implements Authentic {
                         case 0: //back page
                             BackScreen selectOperation4 = this::AdminLoginScreen;
                             selectOperation4.backPage();
+                            break;
 
                         case 1: //this is for adding new coursePlanner
                             CreateCoursePlan ccp = new CreateCoursePlan();
@@ -417,6 +421,7 @@ public class AuthenticImpl implements Authentic {
                 luc.loginBack();
             };
             backScreen.backPage();
+            break;
 
         case 1: // this is for create coursePlanner
             CreateCoursePlan ccp = new CreateCoursePlan();
@@ -445,7 +450,6 @@ public class AuthenticImpl implements Authentic {
                 PreparedStatement ps = con.prepareStatement("update faculty set password=? where username=?");
                 ps.setString(1,password);
                 ps.setString(2,username);
-
                 ps.executeUpdate();
             }catch (SQLException e){
                 e.printStackTrace();

@@ -12,11 +12,11 @@ public class SetFacultyPassword {
         String pwd = null;
         Scanner sc = new Scanner(System.in);
         System.out.println();
-        System.out.println("Enter Updated Password");
-        System.out.println();
+//        System.out.println("Enter Updated Password");
+//        System.out.println();
         System.out.print("Enter New Password : ");
         String newPassword = sc.next();
-        System.out.println("Confirm Password : ");
+        System.out.print("Confirm Password : ");
         String confirmPassword = sc.next();
 
         FacultyDao dao = new FacultyDaoImpl();
@@ -24,6 +24,11 @@ public class SetFacultyPassword {
 
         if (newPassword.equals(confirmPassword)) {
             pwd = newPassword;
+        }
+        else{
+            System.out.println("Password not matched...");
+            System.out.println();
+            System.exit(0);
         }
         return pwd;
     }

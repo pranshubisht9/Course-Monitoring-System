@@ -26,7 +26,7 @@ public class SetFacultyPassword {
             pwd = newPassword;
         }
         else{
-            System.out.println("Password not matched...");
+            System.out.println("Password not matched....");
             System.out.println();
             System.exit(0);
         }

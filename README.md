@@ -1,5 +1,3 @@
-# nifty-competition-2668
-SB-101 Project
 
 Project: Course Monitoring System
 
@@ -38,7 +36,7 @@ So the Automated Course Monitoring System will keep the records of all the cours
 Clone the project
 
 ```bash
-  git clone https://github.com/pranshubisht9/nifty-competition-2668.git
+  git clone https://github.com/pranshubisht9/Course_Monitoring_System.git
 ```
 
 ## Technologies we used

@@ -1,7 +1,7 @@
 
 # Project: Course Monitoring System
 
-In this solo project i have tried to solve problem statement with my efforts and the technology stack, that i have learned till now in Unit-5 in Masai School, Problem statement is below:-
+In this solo project i have tried to solve problem statement with my efforts and the technology stack, Problem statement is below:-
 
 In an educational  Institute there are several courses running parallel  every day. For every course there are several batches at same/different time. Every course has a session wise/day wise schedule. It will be difficult for the Faculty Head to know the status of every batch i.e what is the session taught at each day in a batch.
 

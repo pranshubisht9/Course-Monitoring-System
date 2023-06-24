@@ -70,6 +70,3 @@ In this project i have used the following technologies:
 ![faculty](https://user-images.githubusercontent.com/106018070/208294186-63939a80-ad9b-450c-8946-0bfa49a958e0.png)
 
 
-## Video Demonstration
-
-[Link](https://drive.google.com/file/d/1RobN05saos1pR0JU-XsNcVooXymPKDM3/view?usp=sharing)
